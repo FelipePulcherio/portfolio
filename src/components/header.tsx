@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CustomButton from './customButton';
 
 export default function Header(): JSX.Element {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -6,32 +7,6 @@ export default function Header(): JSX.Element {
   // Define helper functions
   function OpenCloseButton(): void {
     return setIsMobileMenuOpen(!isMobileMenuOpen);
-  }
-
-  // Define props used in LinkButton function
-  interface LinkButtonProps {
-    id: string;
-    text: string;
-    border?: boolean;
-  }
-
-  function LinkButton({
-    id,
-    text,
-    border = false,
-  }: LinkButtonProps): JSX.Element {
-    return (
-      <button
-        id={id}
-        className={
-          'font-sans font-black text-lg tracking-normal leading-tight text-inherit py-[.85rem] px-[1.55rem] md:tracking-wide lg:text-base lg:tracking-wider lg:py-[.65rem] lg:px-[1.35rem] 2xl:text-xl ' +
-          (border &&
-            'ml-3 border-[.125rem] border-[#FFFFFF] rounded-lg transition-colors duration-200 hover:bg-[#000000]')
-        }
-      >
-        {text}
-      </button>
-    );
   }
 
   return (
@@ -49,13 +24,30 @@ export default function Header(): JSX.Element {
           </button>
         </div>
         <div className='otherButtonsContainer hidden flex-row items-center justify-between gap-4 lg:flex'>
-          <LinkButton id={'skillsButton'} text={'SKILLS'} />
-          <LinkButton id={'projectsButton'} text={'PROJECTS'} />
-          <LinkButton id={'aboutButton'} text={'ABOUT'} />
-          <LinkButton
-            id={'getintouchButton'}
-            text={'GET IN TOUCH'}
+          <CustomButton
+            id='projectsButton'
+            text='PROJECTS'
+            customClasses='text-lg lg:text-base 2xl:text-xl '
+            customFunction={() => console.log('')}
+          />
+          <CustomButton
+            id='skillsButton'
+            text='SKILLS'
+            customClasses='text-lg lg:text-base 2xl:text-xl '
+            customFunction={() => console.log('')}
+          />
+          <CustomButton
+            id='aboutButton'
+            text='ABOUT'
+            customClasses='text-lg lg:text-base 2xl:text-xl '
+            customFunction={() => console.log('')}
+          />
+          <CustomButton
+            id='getintouchButton'
+            text='GET IN TOUCH'
+            customClasses='text-lg lg:text-base 2xl:text-xl ml-3 border-[#FFFFFF] hover:border-[#FFEE66] hover:bg-[#000000]'
             border={true}
+            customFunction={() => console.log('')}
           />
         </div>
         <div
@@ -85,13 +77,30 @@ export default function Header(): JSX.Element {
         </div>
         {isMobileMenuOpen && (
           <div className='otherButtonsContainerMobile bg-[#101010] fixed top-20 left-0 right-0 w-screen h-screen flex flex-col items-center justify-start gap-4'>
-            <LinkButton id={'skillsButton'} text={'SKILLS'} />
-            <LinkButton id={'projectsButton'} text={'PROJECTS'} />
-            <LinkButton id={'aboutButton'} text={'ABOUT'} />
-            <LinkButton
-              id={'getintouchButton'}
-              text={'GET IN TOUCH'}
+            <CustomButton
+              id='projectsButton'
+              text='PROJECTS'
+              customClasses='text-lg lg:text-base 2xl:text-xl '
+              customFunction={() => console.log('')}
+            />
+            <CustomButton
+              id='skillsButton'
+              text='SKILLS'
+              customClasses='text-lg lg:text-base 2xl:text-xl '
+              customFunction={() => console.log('')}
+            />
+            <CustomButton
+              id='aboutButton'
+              text='ABOUT'
+              customClasses='text-lg lg:text-base 2xl:text-xl '
+              customFunction={() => console.log('')}
+            />
+            <CustomButton
+              id='getintouchButton'
+              text='GET IN TOUCH'
+              customClasses='text-lg lg:text-base 2xl:text-xl ml-3 hover:bg-[#000000]'
               border={true}
+              customFunction={() => console.log('')}
             />
           </div>
         )}
