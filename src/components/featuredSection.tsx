@@ -1,11 +1,13 @@
+import CustomButton from './customButton';
+
 export default function FeaturedSection(): JSX.Element {
   function OpenLink(url: string): void {
     window.open(url, '_blank');
   }
 
   interface ButtonProps {
-    url: string;
     title: string;
+    url: string;
   }
 
   interface SkillProps {
@@ -13,7 +15,7 @@ export default function FeaturedSection(): JSX.Element {
     title: string;
     description: string;
     tags: string[];
-    buttonURLs: ButtonProps[];
+    buttonProps: ButtonProps[];
   }
 
   function Work({
@@ -21,7 +23,7 @@ export default function FeaturedSection(): JSX.Element {
     title,
     description,
     tags,
-    buttonURLs,
+    buttonProps,
   }: SkillProps): JSX.Element {
     return (
       <div className='workContainer w-full h-full flex flex-col items-start justify-start gap-5 lg:flex-row lg:gap-12 xl:gap-16'>
@@ -44,14 +46,14 @@ export default function FeaturedSection(): JSX.Element {
             {description}
           </div>
           <div className='buttonContainer w-full flex flex-row items-center justify-start gap-4'>
-            {buttonURLs.map((btn, index) => (
-              <button
+            {buttonProps.map((btn, index) => (
+              <CustomButton
                 key={index}
-                className='button text-sm bg-transparent font-bold tracking-wide text-[#101010] transition-colors py-[10px] px-[15px] border-2 border-[#101010] rounded-[5px] hover:text-[#FFFFFF] hover:bg-[#101010] md:text-[0.94rem] xl:text-base '
-                onClick={() => OpenLink(btn.url)}
-              >
-                {btn.title}
-              </button>
+                text={btn.title}
+                customClasses='text-sm text-[#101010] border-[#101010] hover:text-[#FFFFFF] hover:bg-[#101010] md:text-[0.94rem] xl:text-base '
+                border={true}
+                customFunction={() => OpenLink(btn.url)}
+              />
             ))}
           </div>
         </div>
@@ -62,9 +64,9 @@ export default function FeaturedSection(): JSX.Element {
   return (
     <div
       id='featuredSection'
-      className='featuredSection w-full h-min max-w-screen-2xl m-auto mb-[50vh] p-[30px] pb-[100px] rounded-[30px] font-sans bg-[#FFFFFF] text-[#101010] font-normal flex flex-col items-start justify-start gap-12 sm:px-[50px] md:px-[70px] md:pt-[40px] lg:rounded-[45px] lg:px-[100px] xl:pt-[80px] 2xl:px-[150px]'
+      className='featuredSection w-full h-min max-w-screen-2xl m-auto p-[30px] pb-[100px] rounded-[30px] font-sans bg-[#FFFFFF] text-[#101010] font-normal flex flex-col items-start justify-start gap-12 sm:px-[50px] md:px-[70px] md:pt-[40px] lg:rounded-[45px] lg:px-[100px] xl:pt-[80px] 2xl:px-[150px]'
     >
-      <div className='title font-bold w-full text-3xl text-center md:text-4xl md:text-left '>
+      <div className='title font-bold w-full text-3xl text-center md:text-4xl md:text-left 2xl:text-5xl '>
         Featured Projects
       </div>
       <div className='mainContainer w-full h-min items-center justify-center flex flex-col flex-wrap gap-20 lg:gap-24 xl:gap-32'>
@@ -82,9 +84,9 @@ export default function FeaturedSection(): JSX.Element {
             'Prisma',
             'OOP',
           ]}
-          buttonURLs={[
-            { url: 'https://google.com', title: 'Source Code' },
-            { url: 'https://google.com', title: 'See Live' },
+          buttonProps={[
+            { title: 'Source Code', url: 'https://google.com' },
+            { title: 'See Live', url: 'https://google.com' },
           ]}
         />
         <Work
@@ -101,9 +103,9 @@ export default function FeaturedSection(): JSX.Element {
             'Prisma',
             'OOP',
           ]}
-          buttonURLs={[
-            { url: 'https://google.com', title: 'Source Code' },
-            { url: 'https://google.com', title: 'See Live' },
+          buttonProps={[
+            { title: 'Source Code', url: 'https://google.com' },
+            { title: 'See Live', url: 'https://google.com' },
           ]}
         />
         <Work
@@ -120,9 +122,9 @@ export default function FeaturedSection(): JSX.Element {
             'Prisma',
             'OOP',
           ]}
-          buttonURLs={[
-            { url: 'https://google.com', title: 'Source Code' },
-            { url: 'https://google.com', title: 'See Live' },
+          buttonProps={[
+            { title: 'Source Code', url: 'https://google.com' },
+            { title: 'See Live', url: 'https://google.com' },
           ]}
         />
       </div>
