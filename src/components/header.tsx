@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import CustomButton from './customButton';
+import LogoSVG from '../assets/logo.svg?react';
 
 export default function Header(): JSX.Element {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -15,7 +16,10 @@ export default function Header(): JSX.Element {
       className='bg-[#101010] w-screen h-16 fixed top-0 left-0 right-0 z-50 lg:h-20'
     >
       <div className='headerContainer bg-inherit text-[#FFFFFF] max-w-screen-2xl h-full m-auto px-10 flex flex-row items-center justify-center lg:justify-between'>
-        <div className='homeButtonContainer'>
+        <div className='homeButtonContainer flex flex-row items-center justify-start gap-4'>
+          <div className='logoContainer w-[24px] '>
+            <LogoSVG width={'100%'} height={'100%'} />
+          </div>
           <button
             id='homeButton'
             className='font-sans font-black text-2xl tracking-[.015rem] text-inherit'
