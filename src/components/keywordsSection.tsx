@@ -51,12 +51,12 @@ export default function KeywordsSection(): JSX.Element {
       className='font-sans text-[#FFFFFF] text-3xl font-black md:text-5xl lg:text-6xl '
     >
       <ScrollingText
-        text={'Product Design • Digital Design • UX Research'}
+        text={'Invention • Strategy • Programming'}
         direction='right'
         initialLeft={-45}
       />
       <ScrollingText
-        text={'Figma Freak • Illustration • No Code'}
+        text={'Creation • Development • Smart Solutions • Analysis'}
         direction='left'
         initialLeft={70}
       />
