@@ -27,7 +27,7 @@ export default function SkillsSection(): JSX.Element {
   return (
     <div
       id='skillsSection'
-      className='skillsSection w-full h-min max-w-screen-2xl m-auto px-[30px] py-[150px] font-sans text-[#FFFFFF] font-normal flex flex-col items-start justify-start gap-20 sm:px-[50px] md:px-[70px] lg:px-[100px] lg:py-[200px] 2xl:px-[150px]'
+      className='skillsSection w-full h-min max-w-screen-2xl m-auto px-[30px] py-[150px] pb-[75px] font-sans text-[#FFFFFF] font-normal flex flex-col items-start justify-start gap-20 sm:px-[50px] md:px-[70px] lg:px-[100px] lg:py-[200px] lg:pb-[100px] 2xl:px-[150px]'
     >
       <div className='title font-bold w-full text-3xl text-center md:text-4xl md:text-left '>
         Skills
@@ -57,6 +57,7 @@ export default function SkillsSection(): JSX.Element {
             'Express',
             'RESTful API',
             'Prisma',
+            'Puppeteer',
             'Socket.io',
           ]}
         />
