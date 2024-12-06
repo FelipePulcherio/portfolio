@@ -70,7 +70,7 @@ export default function FeaturedSection(): JSX.Element {
   return (
     <div
       id='featuredSection'
-      className='featuredSection w-full h-min max-w-screen-2xl m-auto p-[30px] pb-[100px] rounded-[30px] font-sans bg-[#FFFFFF] text-[#101010] font-normal flex flex-col items-start justify-start gap-12 sm:px-[50px] md:px-[70px] md:pt-[40px] lg:rounded-[45px] lg:px-[100px] xl:pt-[80px] 2xl:px-[150px]'
+      className='featuredSection w-full h-min max-w-screen-2xl m-auto scroll-mt-16 lg:scroll-mt-20 p-[30px] pb-[100px] rounded-[30px] font-sans bg-[#FFFFFF] text-[#101010] font-normal flex flex-col items-start justify-start gap-12 sm:px-[50px] md:px-[70px] md:pt-[40px] lg:rounded-[45px] lg:px-[100px] xl:pt-[80px] 2xl:px-[150px]'
       ref={featured}
     >
       <div className='title font-bold w-full text-3xl text-center md:text-4xl md:text-left 2xl:text-5xl '>
