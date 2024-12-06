@@ -5,7 +5,6 @@ import SkillsSection from '../components/skillsSection';
 import FeaturedSection from '../components/featuredSection';
 import AboutSection from '../components/aboutSection';
 import ContactSection from '../components/contactSection';
-import Footer from '../components/footer';
 
 export default function LandingPage(): JSX.Element {
   return (
@@ -17,7 +16,6 @@ export default function LandingPage(): JSX.Element {
       <SkillsSection />
       <AboutSection />
       <ContactSection />
-      <Footer />
     </div>
   );
 }
