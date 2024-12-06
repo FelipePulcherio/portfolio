@@ -38,7 +38,7 @@ export default function KeywordsSection(): JSX.Element {
         }}
         className={`flow-${direction} relative whitespace-nowrap ${
           direction === 'left' && 'mt-4 md:mt-0'
-        } last:mb-[50vh] `}
+        } `}
       >
         {text}
       </p>
@@ -48,18 +48,20 @@ export default function KeywordsSection(): JSX.Element {
   return (
     <div
       id='keywordSection'
-      className='font-sans text-[#FFFFFF] text-3xl font-black md:text-5xl lg:text-6xl '
+      className='w-full h-[55vh] flex flex-col items-center justify-start'
     >
-      <ScrollingText
-        text={'Invention • Strategy • Programming'}
-        direction='right'
-        initialLeft={-45}
-      />
-      <ScrollingText
-        text={'Creation • Development • Smart Solutions • Analysis'}
-        direction='left'
-        initialLeft={70}
-      />
+      <div className='keywordSectionContainer font-sans text-[#FFFFFF] text-3xl font-black md:text-5xl lg:text-6xl '>
+        <ScrollingText
+          text={'Invention • Strategy • Programming'}
+          direction='right'
+          initialLeft={-45}
+        />
+        <ScrollingText
+          text={'Creation • Development • Smart Solutions • Analysis'}
+          direction='left'
+          initialLeft={70}
+        />
+      </div>
     </div>
   );
 }
