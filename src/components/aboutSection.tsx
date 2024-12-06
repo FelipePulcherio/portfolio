@@ -1,6 +1,9 @@
+import useSectionRefs from '../hooks/useSectionRefs';
 import CustomButton from './customButton';
 
 export default function AboutSection(): JSX.Element {
+  const { about } = useSectionRefs();
+
   function OpenLink(url: string): void {
     window.open(url, '_blank');
   }
@@ -9,6 +12,7 @@ export default function AboutSection(): JSX.Element {
     <div
       id='aboutSection'
       className='aboutSection w-full h-min max-w-screen-2xl m-auto px-[30px] py-[150px] pt-[75px] font-sans text-[#FFFFFF] font-normal flex flex-col items-start justify-start gap-20 sm:px-[50px] md:px-[70px] lg:px-[100px] lg:py-[200px] lg:pt-[100px] 2xl:px-[150px] '
+      ref={about}
     >
       <div className='title font-bold w-full text-3xl text-center md:text-4xl md:text-left '>
         About
