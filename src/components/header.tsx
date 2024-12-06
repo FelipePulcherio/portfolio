@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import useSectionRefs from '../hooks/useSectionRefs';
 import CustomButton from './customButton';
 import LogoSVG from '../assets/logo.svg?react';
 
 export default function Header(): JSX.Element {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const { intro, featured, skills, about, contact } = useSectionRefs();
 
   // Define helper functions
   function OpenCloseButton(): void {
@@ -23,6 +25,9 @@ export default function Header(): JSX.Element {
           <button
             id='homeButton'
             className='font-sans font-black text-2xl tracking-[.015rem] text-inherit'
+            onClick={() =>
+              intro.current?.scrollIntoView({ behavior: 'smooth' })
+            }
           >
             FELIPE PULCHERIO
           </button>
@@ -32,26 +37,34 @@ export default function Header(): JSX.Element {
             id='projectsButton'
             text='PROJECTS'
             customClasses='text-lg lg:text-base 2xl:text-xl '
-            customFunction={() => console.log('')}
+            customFunction={() =>
+              featured.current?.scrollIntoView({ behavior: 'smooth' })
+            }
           />
           <CustomButton
             id='skillsButton'
             text='SKILLS'
             customClasses='text-lg lg:text-base 2xl:text-xl '
-            customFunction={() => console.log('')}
+            customFunction={() =>
+              skills.current?.scrollIntoView({ behavior: 'smooth' })
+            }
           />
           <CustomButton
             id='aboutButton'
             text='ABOUT'
             customClasses='text-lg lg:text-base 2xl:text-xl '
-            customFunction={() => console.log('')}
+            customFunction={() =>
+              about.current?.scrollIntoView({ behavior: 'smooth' })
+            }
           />
           <CustomButton
             id='getintouchButton'
             text='GET IN TOUCH'
             customClasses='text-lg lg:text-base 2xl:text-xl ml-3 border-[#FFFFFF] hover:border-[#FFEE66] hover:bg-[#000000]'
             border={true}
-            customFunction={() => console.log('')}
+            customFunction={() =>
+              contact.current?.scrollIntoView({ behavior: 'smooth' })
+            }
           />
         </div>
         <div
@@ -85,26 +98,34 @@ export default function Header(): JSX.Element {
               id='projectsButton'
               text='PROJECTS'
               customClasses='text-lg lg:text-base 2xl:text-xl '
-              customFunction={() => console.log('')}
+              customFunction={() =>
+                featured.current?.scrollIntoView({ behavior: 'smooth' })
+              }
             />
             <CustomButton
               id='skillsButton'
               text='SKILLS'
               customClasses='text-lg lg:text-base 2xl:text-xl '
-              customFunction={() => console.log('')}
+              customFunction={() =>
+                skills.current?.scrollIntoView({ behavior: 'smooth' })
+              }
             />
             <CustomButton
               id='aboutButton'
               text='ABOUT'
               customClasses='text-lg lg:text-base 2xl:text-xl '
-              customFunction={() => console.log('')}
+              customFunction={() =>
+                about.current?.scrollIntoView({ behavior: 'smooth' })
+              }
             />
             <CustomButton
               id='getintouchButton'
               text='GET IN TOUCH'
               customClasses='text-lg lg:text-base 2xl:text-xl ml-3 hover:bg-[#000000]'
               border={true}
-              customFunction={() => console.log('')}
+              customFunction={() =>
+                contact.current?.scrollIntoView({ behavior: 'smooth' })
+              }
             />
           </div>
         )}
