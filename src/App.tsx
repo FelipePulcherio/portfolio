@@ -1,5 +1,10 @@
+import { SectionRefsProvider } from './contexts/sectionRefsContext';
 import LandingPage from './pages/landingPage';
 
 export default function App() {
-  return <LandingPage />;
+  return (
+    <SectionRefsProvider>
+      <LandingPage />
+    </SectionRefsProvider>
+  );
 }
