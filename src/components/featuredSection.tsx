@@ -1,4 +1,7 @@
 import CustomButton from './customButton';
+import WeddingImg from '../assets/wedding.png';
+import GameImg from '../assets/game.png';
+import WebscraperImg from '../assets/pricewebscraper.png';
 
 export default function FeaturedSection(): JSX.Element {
   function OpenLink(url: string): void {
@@ -15,7 +18,7 @@ export default function FeaturedSection(): JSX.Element {
     title: string;
     description: string;
     tags: string[];
-    buttonProps: ButtonProps[];
+    buttonProps?: ButtonProps[];
   }
 
   function Work({
@@ -46,7 +49,7 @@ export default function FeaturedSection(): JSX.Element {
             {description}
           </div>
           <div className='buttonContainer w-full flex flex-row items-center justify-start gap-4'>
-            {buttonProps.map((btn, index) => (
+            {buttonProps?.map((btn, index) => (
               <CustomButton
                 key={index}
                 text={btn.title}
@@ -71,60 +74,47 @@ export default function FeaturedSection(): JSX.Element {
       </div>
       <div className='mainContainer w-full h-min items-center justify-center flex flex-col flex-wrap gap-20 lg:gap-24 xl:gap-32'>
         <Work
-          imgSRC='https://picsum.photos/1600/900'
+          imgSRC={GameImg}
           title='JavaScript Game'
-          description='Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi amet nullam efficitur volutpat curabitur a mollis ligula ridiculus. Eros consequat egestas elit id curae quam euismod. Sodales porta feugiat; dignissim id class. Eget duis taciti adipiscing nisl mi? Integer in ac arcu sagittis hendrerit tellus. Justo mus mus viverra senectus blandit ut quisque netus.'
-          tags={[
-            'React',
-            'Node',
-            'Express',
-            'Socket.io',
-            'MongoDB',
-            'SASS',
-            'Prisma',
-            'OOP',
-          ]}
-          buttonProps={[
-            { title: 'Source Code', url: 'https://google.com' },
-            { title: 'See Live', url: 'https://google.com' },
-          ]}
+          description=''
+          tags={['Javascript', 'React', 'CSS/SASS', 'OOP']}
         />
         <Work
-          imgSRC='https://picsum.photos/1601/900'
+          imgSRC={WebscraperImg}
           title='Price web scraper'
-          description='Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi amet nullam efficitur volutpat curabitur a mollis ligula ridiculus. Eros consequat egestas elit id curae quam euismod. Sodales porta feugiat; dignissim id class. Eget duis taciti adipiscing nisl mi? Integer in ac arcu sagittis hendrerit tellus. Justo mus mus viverra senectus blandit ut quisque netus.'
+          description="Price Web Scraper is an automated tool designed to track prices of products across major online retailers such as Walmart, Amazon, BestBuy, Newegg, and Canada Computers. Utilizing scheduled scraping, it collects current price data at defined intervals, stores it in a cloud database, and enables historical price tracking and daily lowest-price analysis. This project leverages BrightData's proxy service and cloud browser for stable web scraping, along with MongoDB Atlas for secure data storage."
           tags={[
-            'React',
+            'Typescript',
             'Node',
             'Express',
-            'Socket.io',
+            'Agenda',
+            'Puppeteer',
             'MongoDB',
-            'SASS',
-            'Prisma',
-            'OOP',
+            'Mongoose',
+            'Historical Data',
+            'Data Analysis',
           ]}
           buttonProps={[
-            { title: 'Source Code', url: 'https://google.com' },
-            { title: 'See Live', url: 'https://google.com' },
+            {
+              title: 'Source Code',
+              url: 'https://github.com/FelipePulcherio/price-web-scraper',
+            },
           ]}
         />
         <Work
-          imgSRC='https://picsum.photos/1600/899'
+          imgSRC={WeddingImg}
           title='Wedding mockup'
-          description='Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi amet nullam efficitur volutpat curabitur a mollis ligula ridiculus. Eros consequat egestas elit id curae quam euismod. Sodales porta feugiat; dignissim id class. Eget duis taciti adipiscing nisl mi? Integer in ac arcu sagittis hendrerit tellus. Justo mus mus viverra senectus blandit ut quisque netus.'
-          tags={[
-            'React',
-            'Node',
-            'Express',
-            'Socket.io',
-            'MongoDB',
-            'SASS',
-            'Prisma',
-            'OOP',
-          ]}
+          description='This project is a wedding page mockup, designed as a personal learning exercise in web development. It features pages for RSVP, place details, and registry information, created using vanilla HTML, SCSS, and Javascript. The design is fully responsive, ensuring a seamless experience on both desktop and mobile devices.'
+          tags={['HTML', 'CSS/SASS', 'Javascript', 'Google Routes API']}
           buttonProps={[
-            { title: 'Source Code', url: 'https://google.com' },
-            { title: 'See Live', url: 'https://google.com' },
+            {
+              title: 'Source Code',
+              url: 'https://github.com/FelipePulcherio/wedding-mockup/',
+            },
+            {
+              title: 'See Live',
+              url: 'https://felipepulcherio.github.io/wedding-mockup/',
+            },
           ]}
         />
       </div>
