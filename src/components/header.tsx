@@ -93,39 +93,43 @@ export default function Header(): JSX.Element {
           </button>
         </div>
         {isMobileMenuOpen && (
-          <div className='otherButtonsContainerMobile bg-[#101010] fixed top-20 left-0 right-0 w-screen h-screen flex flex-col items-center justify-start gap-4'>
+          <div className='otherButtonsContainerMobile bg-[#101010] fixed top-16 lg:top-20 left-0 right-0 w-screen h-screen flex flex-col items-center justify-start gap-4'>
             <CustomButton
               id='projectsButton'
               text='PROJECTS'
               customClasses='text-lg lg:text-base 2xl:text-xl '
-              customFunction={() =>
-                featured.current?.scrollIntoView({ behavior: 'smooth' })
-              }
+              customFunction={() => {
+                featured.current?.scrollIntoView({ behavior: 'smooth' });
+                OpenCloseButton();
+              }}
             />
             <CustomButton
               id='skillsButton'
               text='SKILLS'
               customClasses='text-lg lg:text-base 2xl:text-xl '
-              customFunction={() =>
-                skills.current?.scrollIntoView({ behavior: 'smooth' })
-              }
+              customFunction={() => {
+                skills.current?.scrollIntoView({ behavior: 'smooth' });
+                OpenCloseButton();
+              }}
             />
             <CustomButton
               id='aboutButton'
               text='ABOUT'
               customClasses='text-lg lg:text-base 2xl:text-xl '
-              customFunction={() =>
-                about.current?.scrollIntoView({ behavior: 'smooth' })
-              }
+              customFunction={() => {
+                about.current?.scrollIntoView({ behavior: 'smooth' });
+                OpenCloseButton();
+              }}
             />
             <CustomButton
               id='getintouchButton'
               text='GET IN TOUCH'
               customClasses='text-lg lg:text-base 2xl:text-xl ml-3 hover:bg-[#000000]'
               border={true}
-              customFunction={() =>
-                contact.current?.scrollIntoView({ behavior: 'smooth' })
-              }
+              customFunction={() => {
+                contact.current?.scrollIntoView({ behavior: 'smooth' });
+                OpenCloseButton();
+              }}
             />
           </div>
         )}
