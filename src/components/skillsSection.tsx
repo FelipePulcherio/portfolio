@@ -1,9 +1,12 @@
+import useSectionRefs from '../hooks/useSectionRefs';
 import LanguagesSVG from '../assets/languages.svg?react';
 import FrontendSVG from '../assets/frontend.svg?react';
 import BackendSVG from '../assets/backend.svg?react';
 import ToolsSVG from '../assets/tools.svg?react';
 
 export default function SkillsSection(): JSX.Element {
+  const { skills } = useSectionRefs();
+
   interface SkillProps {
     svgElement: React.ReactElement<React.SVGProps<SVGElement>>;
     title: string;
@@ -28,6 +31,7 @@ export default function SkillsSection(): JSX.Element {
     <div
       id='skillsSection'
       className='skillsSection w-full h-min max-w-screen-2xl m-auto px-[30px] py-[150px] pb-[75px] font-sans text-[#FFFFFF] font-normal flex flex-col items-start justify-start gap-20 sm:px-[50px] md:px-[70px] lg:px-[100px] lg:py-[200px] lg:pb-[100px] 2xl:px-[150px]'
+      ref={skills}
     >
       <div className='title font-bold w-full text-3xl text-center md:text-4xl md:text-left '>
         Skills
