@@ -1,5 +1,6 @@
 import useSectionRefs from '../hooks/useSectionRefs';
 import CustomButton from './customButton';
+import ProfileIMG from '../assets/profile.jpeg';
 
 export default function AboutSection(): JSX.Element {
   const { about } = useSectionRefs();
@@ -19,7 +20,7 @@ export default function AboutSection(): JSX.Element {
       </div>
       <div className='mainContainer w-full h-min items-center justify-center flex flex-col gap-10 lg:flex-row lg:gap-20 xl:gap-24'>
         <img
-          src='https://picsum.photos/300/300'
+          src={ProfileIMG}
           className='image aspect-square max-w-[300px] rounded-full w-[200px] lg:w-[300px]'
         />
         <div className='text w-full h-full flex flex-col items-center justify-start gap-7 lg:flex-1'>
